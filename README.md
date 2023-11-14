@@ -1,6 +1,2 @@
 # VanIK
- An application that gives you business insights based on google maps reviews
-
- First run ```reviews_scraper.py```
- Then the reviews will be stored in ```reviews.txt```
- Then run other programs.
+"🌐 VanIK: Unleash the potential of location-based consumer reviews! Our GitHub repository houses the codebase for a cutting-edge system that taps into Google Map reviews for businesses. Effortlessly extract and analyze consumer sentiments, gaining invaluable insights to propel your business forward. From geospatial data processing to smart business recommendations, this open-source project is your key to staying competitive in the market. Join us in transforming businesses through data-driven decisions. #LocationInsight #BusinessAnalytics #OpenSource"
