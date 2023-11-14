@@ -1,0 +1,2 @@
+Sentiment Score: 0.31563744588744613
+Keywords: ['and' 'are' 'bakery' 'for' 'good' 'in' 'is' 'review' 'the' 'to']

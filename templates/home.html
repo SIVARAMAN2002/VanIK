@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #ffffff;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        header nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        header nav a {
+            color: #000000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+
+        /* form {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        } */
+
+        p.result {
+            font-weight: bold;
+            margin-top: 10px;
+            color: #007BFF;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+        .div1{
+    width:45%;
+    height:500px;
+    float:left;
+    background-color: rgb(255, 255, 255);
+    }
+    .div2{
+        background-color: rgb(255, 255, 255);
+    width:45%;
+    height:500px;
+    float:left;
+    }
+
+    #loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  margin-left:50%;
+  margin-top: 150px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}   
+    </style>
+</head>
+
+<body>
+
+    <header class="d-flex justify-content-around align-items-center">
+        <div>
+        <img src= "{{url_for('static', filename='/BV_logo.png')}}" alt="" width="350"/> 
+        </div>
+        <div>
+          <h1 style="font-weight: 1000;">VANIK BUSINESS INSIGHTS</h1>
+        </div>
+        <div>
+        <nav>
+            <ul>
+                <li><a href="#" >Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+       </div>
+    </header>
+
+   <!-- <main>
+        
+            
+        <p></p>
+        <form method="post">
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location">
+            <label for="genre">Genre:</label>
+            <input type="text" id="genre" name="genre">
+            <input type="submit" value="Submit">
+        </form>
+    
+        {% if result %}
+        <div class="result-container">
+            {% for sentence in result.split('.') %}
+                <p>{{ sentence }}</p>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+
+        </main>
+
+    <footer>
+        <p>&copy; 2023 VanIK. All rights reserved.</p>
+    </footer>
+-->
+<br>
+<br>
+<div class="d-flex justify-content-around">
+  
+
+ <div class="div1 d-flex justify-content-start ">
+   
+    <div class="p-2">
+    <form method="post">
+        <br>
+        <br>
+        <h1>GIVE YOUR INFO HERE , WE WILL GIVE YOUR BUSINESS INSIGHTS</h1>
+        <br>
+    <label for="location" style="font-family:Times New Roman;font-weight:800;font-size:20px;">Enter the Location of Your Business area:</label>
+    <input type="text" id="location" name="location" size="50">
+    <br>
+    <br>
+    <label for="genre" style="font-family:Times New Roman;font-weight:800;font-size: 20px;">Enter the genre of Your Business area:</label>
+    <input type="text" id="location" name="genre" size="50">
+    <br>
+    <br>
+    <br>
+    <input type="submit" value="Submit" class="p-2" style="background:#0066ff; width: 500px;color:white;font-size:20px;" onmouseover="this.style.background='#000099'" onmouseout="this.style.background='#0066ff'">
+   </div>
+</form>
+
+</div>
+<div class="div2 p-2" style="overflow: scroll;">
+    <h1 style="background:#0066ff;color: white;">RESULTS</h1>
+    {% if result %}
+    <div class="result-container">
+        {% for sentence in result.split('.') %}
+        <ul class="list-group">
+            <li class="list-group-item">{{ sentence }}</li>
+            <!--<p style="color: #000000;"></p>-->
+            </ul>
+        {% endfor %}
+    </div>
+    {% else %}
+     <h1 id="loadervm">helo</h1>
+    <div id="loader" style="visibility:hidden;">
+    </div>
+    {% endif %}
+
+</div>    
+</div>
+</body>
+<script>
+    // Function to check if the page has finished loading
+    function checkPageLoading() {
+        if (document.readyState === 'complete') {
+            // Page has finished loading
+            document.getElementById('loadervm').innerHTML = 'Fill out the form';
+          
+        } else {
+            // Page is still loading
+            document.getElementById('loader').style.visibility = "visible";
+            console.log("visible")
+        }
+    }
+
+    // Attach an event listener to the window to check the loading status
+    window.addEventListener('load', checkPageLoading);
+</script>
+</html>
